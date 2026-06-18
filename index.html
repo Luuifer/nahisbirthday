@@ -839,11 +839,14 @@
   </div>
 </section>
 
-<!-- Music Player Widget with Chopin's Nocturne in E Flat Major -->
+<!-- Music Player Widget with Chopin's Nocturne in E Flat Major (Streamed via Archive.org or fallback music.mp3) -->
 <div class="music-player" id="musicPlayer" onclick="toggleMusic()">
   <span class="music-icon">🎵</span>
   <audio id="bgMusic" loop>
-    <source src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Nocturne_in_E_flat_major%2C_Op._9_no._2.mp3" type="audio/mpeg">
+    <!-- Public domain high-fidelity stream from Internet Archive -->
+    <source src="https://archive.org/download/lp_the-nocturnes_arthur-rubinstein-frdric-chopin/disc1/01.02.%20Op.%209%2C%20No.%202.mp3" type="audio/mpeg">
+    <!-- Local Github fallback (unrestricted stream) -->
+    <source src="music.mp3" type="audio/mpeg">
   </audio>
 </div>
 
