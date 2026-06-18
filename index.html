@@ -59,12 +59,12 @@
   }
   .gateBox {
     width: 90%;
-    max-width: 700px;
+    max-width: 500px;
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(20px);
     border: 1px solid #E8722A;
     border-radius: 25px;
-    padding: 40px;
+    padding: 30px 20px;
     text-align: center;
     color: white;
     box-shadow: 0 0 50px #E8722A;
@@ -72,41 +72,58 @@
   }
   .gateBox h1 {
     color: #E8722A;
-    font-size: 40px;
+    font-size: clamp(24px, 6vw, 36px);
     font-family: 'Noto Naskh Arabic', serif;
     margin-bottom: 15px;
   }
   .gateBox p, .gateBox h2 {
     font-family: 'Noto Naskh Arabic', serif;
-    line-height: 2;
+    line-height: 1.8;
     margin-bottom: 15px;
   }
+  .gateBox h2 {
+    font-size: clamp(16px, 4.5vw, 20px);
+  }
+  
+  /* Compact & Mobile-Friendly Buttons */
   .question button, .yesBtn, .noBtn {
     background: linear-gradient(45deg, #E8722A, #2ABFBF);
     border: none;
     color: white;
-    margin: 10px;
-    padding: 15px 25px;
-    border-radius: 40px;
+    margin: 6px;
+    padding: 10px 18px;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 17px;
-    transition: .3s;
+    font-size: 14px;
+    transition: .2s;
     font-family: 'Noto Naskh Arabic', serif;
+    outline: none;
+  }
+  .loveButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    position: relative;
+  }
+  .yesBtn, .noBtn {
+    font-size: 14px;
+    padding: 10px 22px;
   }
   button:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   .hidden { display: none !important; }
   #message {
     color: #ff9b5e;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 20px;
     font-family: 'Noto Naskh Arabic', serif;
     min-height: 28px;
   }
   @keyframes floatBox {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-12px); }
   }
 
   /* Custom cursor styling */
@@ -261,7 +278,7 @@
   .eye-container.left { left: 0; top: 10px; }
   .eye-container.right { right: 0; top: 10px; }
   
-  /* Upgraded Eye & Pupil styling */
+  /* Eye & Pupil styling */
   .eye {
     width: 100%; height: 100%; border-radius: 50%;
     background: #110502;
@@ -319,7 +336,7 @@
   .letter-decoration::before, .letter-decoration::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent); }
   .letter-decoration-icon { color: var(--gold); font-size: 1rem; }
 
-  /* Live Anniversary Counter CSS */
+  /* Anniversary Live Counter CSS */
   .together-counter {
     margin: 2.5rem auto 1.5rem;
     padding: 1.5rem;
@@ -357,6 +374,44 @@
     font-size: 0.8rem;
     color: var(--text-dim);
     margin-top: 0.25rem;
+  }
+
+  /* Magical Letter Box Box Styling */
+  .magic-box-container {
+    margin: 2.5rem auto 1rem;
+    max-width: 450px;
+  }
+  .magic-box-btn {
+    background: linear-gradient(135deg, rgba(232,114,42,0.15), rgba(212,175,55,0.15));
+    border: 1px dashed var(--gold);
+    border-radius: 12px;
+    padding: 15px 20px;
+    cursor: pointer;
+    color: var(--gold-light);
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 14px;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  @media (min-width: 769px) { .magic-box-btn { cursor: none; } }
+  .magic-box-btn:hover {
+    background: linear-gradient(135deg, rgba(232,114,42,0.25), rgba(212,175,55,0.25));
+    box-shadow: 0 0 15px rgba(212,175,55,0.2);
+  }
+  .magic-message-display {
+    min-height: 60px;
+    margin-top: 15px;
+    font-family: 'Noto Naskh Arabic', serif;
+    font-size: 15px;
+    color: var(--cream);
+    line-height: 1.8;
+    direction: rtl;
+    padding: 10px;
+    border-radius: 8px;
+    background: rgba(10,15,26,0.3);
+    transition: opacity 0.3s ease;
   }
 
   /* ============ TIMELINE SECTION ============ */
@@ -494,15 +549,15 @@
     <div id="step1" class="question">
       <h2>🎂 ڕێکەوتی لەدایکبوونی ناهی کامە؟</h2>
       <button onclick="checkAnswer(1,true)">٢٠ / حوزەیران / ٢٠٠١</button>
-      <button onclick="checkAnswer(1,false)">١٥ / نیسان / ٢٠٠٢</button>
-      <button onclick="checkAnswer(1,false)">٢٣ / ئاب / ٢٠٠٣</button>
+      <button onclick="checkAnswer(1,false)">١ / نیسان / ٢٠٠٥ 🤡</button>
+      <button onclick="checkAnswer(1,false)">١٨ / شوبات / ١٩٩٠ 👵</button>
     </div>
     <!-- Step 2 -->
     <div id="step2" class="question hidden">
       <h2>🎁 ڕێکەوتی لەدایکبوونی نەریمان کامە؟</h2>
       <button onclick="checkAnswer(2,true)">١٠ / کانونی دووەم / ٢٠٠٣</button>
-      <button onclick="checkAnswer(2,false)">٢١ / تەمموز / ٢٠٠٢</button>
-      <button onclick="checkAnswer(2,false)">٣ / ئادار / ٢٠٠٤</button>
+      <button onclick="checkAnswer(2,false)">٣١ / کانوونی یەکەم / ١٩٩٩ 👶</button>
+      <button onclick="checkAnswer(2,false)">ڕێکەوتی خۆمم بیرچووە 💀</button>
     </div>
     <!-- Step 3 -->
     <div id="step3" class="question hidden">
@@ -592,14 +647,24 @@
         و بوونت ئارامییەکەیە کە دڵم هەمیشە بۆی گەڕایە.
       </p>
 
-      <!-- Anniversary Live Counter -->
+      <!-- Anniversary Live Counter (Now starting from Jan 28, 2026) -->
       <div class="together-counter">
-        <div class="counter-title">کاتەکانی پێکەوەبوونمان 🧡</div>
+        <div class="counter-title">کاتەکانی ناسینی یەکترمان 🧡</div>
         <div class="counter-grid">
           <div class="counter-item"><span id="days">0</span><label>ڕۆژ</label></div>
           <div class="counter-item"><span id="hours">0</span><label>کاتژمێر</label></div>
           <div class="counter-item"><span id="minutes">0</span><label>خولەک</label></div>
           <div class="counter-item"><span id="seconds">0</span><label>چرکە</label></div>
+        </div>
+      </div>
+
+      <!-- Secret Interactive Message Box -->
+      <div class="magic-box-container">
+        <button class="magic-box-btn" onclick="revealSecretNote()">
+          <span>سندوقی نامە جادووییەکان 💌</span>
+        </button>
+        <div class="magic-message-display hidden" id="secretNoteDisplay">
+          لێرە کلیک بکە بۆ خوێندنەوەی نامەیەکی نوێی دڵم...
         </div>
       </div>
 
@@ -621,6 +686,11 @@
   <span class="section-label reveal">یادگاری و هەست</span>
   <h2 class="section-title reveal">چیرۆکی هەنگاوەکانمان</h2>
   <div class="timeline-grid">
+    <div class="timeline-card reveal">
+      <span class="timeline-icon">✨</span>
+      <h3 class="timeline-title">یەکەم بینین و یەکترناسین</h3>
+      <p class="timeline-text">٢٨ی کانوونی دووەمی ٢٠٢٦؛ ئەو کاتە جادووییەی کە ڕێگاکانمان یەکتریان بڕی و بوو بە سەرەتای چیرۆکەکەمان.</p>
+    </div>
     <div class="timeline-card reveal">
       <span class="timeline-icon">📖</span>
       <h3 class="timeline-title">چاوپێکەوتنی توێژینەوە</h3>
@@ -645,11 +715,6 @@
       <span class="timeline-icon">🌊</span>
       <h3 class="timeline-title">ئارامی دەریا</h3>
       <p class="timeline-text">بوونت وەک دەریایەکی ئارامە — قووڵ، فراوان، و شوێنێک کە هەموو توفانەکانم تێیدا ئارام دەبن.</p>
-    </div>
-    <div class="timeline-card reveal">
-      <span class="timeline-icon">✨</span>
-      <h3 class="timeline-title">کاتی جادوویی</h3>
-      <p class="timeline-text">کاتە ئاساییەکانت گۆڕی بە جادوویەک کە هەرگیز نامەوێت لەبیربکرێت. هەر یادگارییەک لەگەڵت درەوشاوەیە.</p>
     </div>
   </div>
 </section>
@@ -682,7 +747,6 @@
 <div class="music-player" id="musicPlayer" onclick="toggleMusic()">
   <span class="music-icon">🎵</span>
   <audio id="bgMusic" loop>
-    <!-- Put your preferred background track URL below -->
     <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   </audio>
 </div>
@@ -721,7 +785,7 @@ document.addEventListener('mousemove', (e) => {
     const pupilY = rect.top + rect.height / 2;
     
     const angle = Math.atan2(e.clientY - pupilY, e.clientX - pupilX);
-    const maxDistance = 12; // Controls how far the iris can look
+    const maxDistance = 12; 
     const x = Math.cos(angle) * maxDistance;
     const y = Math.sin(angle) * maxDistance;
     
@@ -743,8 +807,8 @@ function toggleMusic() {
 }
 
 // ============ ANNIVERSARY COUNT-UP ============
-// This date reflects the "13th of May" milestone from your timeline
-const anniversaryDate = new Date("May 13, 2025 00:00:00").getTime(); 
+// Configured to start from 28 / Jan / 2026
+const anniversaryDate = new Date("January 28, 2026 00:00:00").getTime(); 
 
 function updateCounter() {
   const now = new Date().getTime();
@@ -762,6 +826,36 @@ function updateCounter() {
 }
 setInterval(updateCounter, 1000);
 updateCounter();
+
+// ============ MAGICAL LETTER BOX GAME ============
+const secretNotes = [
+  "تۆ تەنها خۆشەویست نیت، تۆ جوانترین پارچەی ڕۆحی منی.. ✨",
+  "هەموو ڕۆژێک سوپاسی خودا دەکەم بۆ ئەو ٢٨ی کانوونی دووەمەی کە تۆی پێناساندم. 🧡",
+  "خەندەکانت وەک تیشکی خۆر وان، ژیانی تاریکم ڕووناک دەکەنەوە. 🌅",
+  "ئەگەر هەزار دڵم هەبێت، هەزار دڵم هەر لای تۆیە. ❤️",
+  "بۆ هەمیشە و هەمیشە، دەستم بەر مەدە چونکە من بێ تۆ هیچم... 🥺💙"
+];
+
+function revealSecretNote() {
+  const display = document.getElementById("secretNoteDisplay");
+  display.classList.remove("hidden");
+  
+  // Choose a random note
+  const randomNote = secretNotes[Math.floor(Math.random() * secretNotes.length)];
+  display.innerText = randomNote;
+  
+  // Sparkle effect at button
+  for(let i = 0; i < 5; i++) {
+    const star = document.createElement('div');
+    star.className = 'heart-blast';
+    star.innerHTML = '✨';
+    star.style.left = (Math.random() * 80 + 10) + 'vw';
+    star.style.top = '70%';
+    star.style.animationDuration = '1s';
+    document.body.appendChild(star);
+    setTimeout(() => star.remove(), 1000);
+  }
+}
 
 // ============ NAV SCROLL ============
 window.addEventListener('scroll', () => {
@@ -991,6 +1085,7 @@ function checkAnswer(step, correct) {
         const texts = [
             "هەوڵی دیکە بدە 😄",
             "هێشتا باشم ناناسیت 😜",
+            "ئەرێ بە جدی؟ ڕێکەوتی ڕاستم بدەرێ 😂",
             "جارێکی تر هەوڵ بدە 🧡"
         ];
         message.innerHTML = texts[Math.floor(Math.random() * texts.length)];
@@ -1010,10 +1105,18 @@ function checkAnswer(step, correct) {
 const noBtn = document.getElementById("noBtn");
 if(noBtn){
   noBtn.addEventListener("mouseover", moveNoButton);
-  noBtn.addEventListener("click", moveNoButton);
+  // Touchstart intercepts mobile attempts instantly
+  noBtn.addEventListener("touchstart", (e) => {
+    e.preventDefault(); 
+    moveNoButton();
+  });
+  noBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    moveNoButton();
+  });
 }
 
-// Upgraded viewport-aware runaway logic (for mobile layout safety)
+// Mobile layout boundaries logic
 function moveNoButton() {
     const btnWidth = noBtn.offsetWidth || 100;
     const btnHeight = noBtn.offsetHeight || 45;
