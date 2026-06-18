@@ -274,17 +274,17 @@
     margin-bottom: 4rem; line-height: 1.5; direction: rtl;
   }
   
-  /* Panoramic masking frame */
+  /* Panoramic masking frame - Sized specifically for wide eye alignment */
   .eyes-photo-frame {
     position: relative;
-    width: min(320px, 90%);
-    height: 120px;
+    width: min(350px, 95%); /* Made slightly wider to capture both eyes side-by-side */
+    height: 105px; /* Perfect horizontal strip height */
     margin: 0 auto 4rem;
   }
   .eyes-photo-mask {
     width: 100%;
     height: 100%;
-    border-radius: 90px 90px 90px 90px; /* Curved mask design */
+    border-radius: 90px 90px 90px 90px; /* Rounded oval/almond shape */
     overflow: hidden;
     border: 2px solid var(--gold);
     box-shadow: 0 0 35px rgba(212, 175, 55, 0.45), 
@@ -295,8 +295,8 @@
     width: 100%;
     height: 100%;
     background: #110502; /* Warm backdrop placeholder */
-    background-size: 260%; /* Precision zoom */
-    background-position: 50% 34.5%; /* Precision alignment from top of portrait */
+    background-size: 185%; /* Zoom factor - 185% brings BOTH eyes in view nicely */
+    background-position: 50% 33%; /* 33% vertical position centers the eyes on n1.jpg */
     filter: contrast(1.08) brightness(1.02);
     transition: transform 0.5s ease;
   }
@@ -698,7 +698,7 @@
   <span class="section-label reveal">تایبەتترین تایبەتمەندی</span>
   <h2 class="section-title reveal">چاوەکانی تۆ</h2>
   
-  <!-- Panoramic masking frame matching the name 'n1' -->
+  <!-- Sized wide eye panorama frame -->
   <div class="eyes-photo-frame reveal">
     <div class="eyes-photo-mask">
       <div class="eyes-photo-bg"></div>
